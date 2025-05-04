@@ -46,7 +46,7 @@ export default function Home() {
               OneToos is a tutoring service offering group courses and one-on-ones, both online and in person. We specialize in STEM subjects such as math, physics, and chemistry, taught by our experienced instructor, Dr. Kelvin Yang. We also offer competition math (AMC, Waterloo) and AP courses (Calculus BC, AP Physics, etc.). Our mission is to empower students to excel academically and in competitions, as well as preparing them for university and boosting their grades to improve their academic performance.
             </p>
             <p className="text-lg text-gray-700 mt-6 text-center md:text-left">
-              Don't believe us? <Link href="/testimonials" className="text-pink hover:underline hover:font-bold transition">View our testimonials</Link> from satisfied parents.
+              Don&apos;t believe us? <Link href="/testimonials" className="text-pink hover:underline hover:font-bold transition">View our testimonials</Link> from satisfied parents.
             </p>
           </div>
 

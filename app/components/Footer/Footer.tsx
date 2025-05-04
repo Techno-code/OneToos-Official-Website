@@ -31,7 +31,8 @@ const Footer = () => {
         {/* QR code */}
         <div className="flex-1 flex flex-col items-center justify-center w-full">
           <div className="bg-gray-100 border border-gray-300 rounded-xl w-40 h-40 flex items-center justify-center text-gray-400 text-lg font-semibold mb-2">
-          <img src="/images/Wechat-QR-Code.jpeg" alt="WeChat QR Code" className="w-40 h-40 object-contain" />          </div>
+            <Image src="/images/Wechat-QR-Code.jpeg" alt="WeChat QR Code" width={160} height={160} className="object-contain" />
+          </div>
           <span className="text-sm text-gray-500">Scan to connect</span>
         </div>
         {/* Contacts */}

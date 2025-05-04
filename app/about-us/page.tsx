@@ -16,7 +16,7 @@ export default function AboutUs() {
           <h1 className="text-4xl font-bold mb-2">Our Teacher</h1>
           <h2 className="text-2xl font-semibold mb-4">Dr. Kelvin Yang, PhD</h2>
           <p className="text-lg mb-6">
-          The courses are taught by Dr. Kelvin Yang, who earned all his physics degrees—from bachelor's to doctorate—at the University of Science and Technology of China. After completing his education, he conducted physics research as a postdoctoral fellow at Hong Kong University of Science and Technology.
+          The courses are taught by Dr. Kelvin Yang, who earned all his physics degrees—from bachelor&apos;s to doctorate—at the University of Science and Technology of China. After completing his education, he conducted physics research as a postdoctoral fellow at Hong Kong University of Science and Technology.
           Dr. Yang teaches science and math subjects for students in grades 3-12 following Ontario and British Columbia curriculums. His teaching covers physics, math, chemistry, college math courses like calculus and linear algebra, mechanics, and he also coaches students for math and physics competitions.          </p>
           <p className="text-base text-gray-600">
             At OneToos, we believe in personalized education, small group learning, and building a supportive community for all students.

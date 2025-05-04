@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function ContactUs() {
   return (
@@ -21,7 +22,7 @@ export default function ContactUs() {
       </div>
       <div className="flex flex-col items-center mt-8">
         <div className="bg-gray-100 border border-gray-300 rounded-lg w-40 h-40 flex items-center justify-center text-gray-400 mb-2">
-          <img src="/images/Wechat-QR-Code.jpeg" alt="WeChat QR Code" className="w-40 h-40 object-contain" />
+          <Image src="/images/Wechat-QR-Code.jpeg" alt="WeChat QR Code" width={160} height={160} className="object-contain" />
         </div>
         <span className="text-sm text-gray-500">Scan to connect on WeChat</span>
       </div>
