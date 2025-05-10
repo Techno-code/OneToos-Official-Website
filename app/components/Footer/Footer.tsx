@@ -39,8 +39,7 @@ const Footer = () => {
         <div className="flex-1 flex flex-col items-center md:items-start justify-center w-full text-sm text-gray-700 space-y-2">
           <div className="w-full text-center md:text-left"><strong>Phone:</strong> 647-283-5514</div>
           <div className="w-full text-center md:text-left"><strong>Email:</strong> one.toos.tutoring@gmail.com</div>
-          <div className="w-full text-center md:text-left"><strong>WeChat ID:</strong> avsd69</div>
-          <div className="w-full text-center md:text-left"><strong>Location:</strong> 118 Tavistock Square, Oakville, ON</div>
+          <div className="w-full text-center md:text-left"><strong>WeChat ID:</strong> ahtmict20</div>
         </div>
       </div>
       <div className="text-center text-darkgrey text-xs py-4 px-4">

@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ContactUs() {
   return (
@@ -14,10 +15,7 @@ export default function ContactUs() {
           <strong>Email:</strong> one.toos.tutoring@gmail.com
         </div>
         <div className="text-lg text-center">
-          <strong>Location:</strong> 118 Tavistock Square, Oakville, ON
-        </div>
-        <div className="text-lg text-center">
-          <strong>WeChat ID:</strong> avsd69
+          <strong>WeChat ID:</strong> ahtmict20
         </div>
       </div>
       <div className="flex flex-col items-center mt-8">
