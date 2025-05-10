@@ -6,7 +6,7 @@ export default function ContactUs() {
   return (
     <main className="max-w-2xl mx-auto py-16 px-4 flex flex-col items-center">
       <h1 className="text-4xl font-bold mb-8">Contact Us</h1>
-      <p className="text-lg mb-8">Intersted in booking a course? Contact us right now!</p>
+      <p className="text-lg mb-8">Interested in booking a course? Contact us right now!</p>
       <div className="w-full max-w-md space-y-4">
         <div className="text-lg text-center">
           <strong>Phone:</strong> 647-283-5514

@@ -83,7 +83,7 @@ export default function Home() {
               <li><b>University Bridge Courses</b> 🎓: Core subjects such as Calculus, Classical Mechanics, and Introduction to Quantum Physics</li>
             </ul>
             <p className="text-lg text-gray-700 max-w-2xl text-center md:text-left px-4 md:px-0 mt-4">
-              Our classes are offered in small groups or one-on-one sessions, with flexible online/offline options (Oakville classroom or on Zoom) 💻
+              Our classes are offered in small groups or one-on-one sessions, with flexible online/offline options 💻
             </p>
           </div>
         </div>

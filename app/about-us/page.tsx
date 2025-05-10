@@ -87,7 +87,7 @@ export default function AboutUs() {
 
       {/* CTA Section */}
       <div className="text-center">
-        <p className="text-lg text-gray-600 mb-6">Ready to experience Dr. Yang's teaching methodology?</p>
+        <p className="text-lg text-gray-600 mb-6">Ready to experience Dr. Yang&apos;s teaching methodology?</p>
         <Link 
           href="/courses" 
           className="inline-block bg-pink hover:bg-pink/90 text-white font-bold py-3 px-8 border-b-4 border-pink/60 hover:border-pink/50 rounded-lg transition-all hover:scale-105"
