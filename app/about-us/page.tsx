@@ -7,7 +7,7 @@ export default function AboutUs() {
     <main className="max-w-5xl mx-auto py-16 px-4">
       {/* Hero Section */}
       <div className="text-center mb-16">
-        <h1 className="text-5xl font-bold mb-4">Meet Dr. Kelvin Yang 👨‍🏫</h1>
+        <h1 className="text-5xl font-bold mb-4">Meet Dr. Kelvin Yang</h1>
         <p className="text-xl text-gray-600">Department of Physics, University of Science and Technology of China</p>
       </div>
 
