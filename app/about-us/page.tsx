@@ -35,7 +35,7 @@ export default function AboutUs() {
             <ul className="space-y-3">
               <li className="flex items-center">
                 <span className="text-pink mr-2">✓</span>
-                <span>Undergraduate Degree, Master's, and PhD from University of Science and Technology of China (USTC)</span>
+                <span>Undergraduate Degree, Master&apos;s, and PhD from University of Science and Technology of China (USTC)</span>
               </li>
               <li className="flex items-center">
                 <span className="text-pink mr-2">✓</span>
