@@ -1,44 +1,95 @@
-"use client"
-import Navbar from './Navbar';
-import React, { useEffect } from 'react';
+"use client";
+import { Disclosure } from '@headlessui/react';
+import Link from 'next/link';
+import React from 'react';
+import { Bars3Icon } from '@heroicons/react/24/outline';
+import Drawer from "./Drawer";
+import Drawerdata from "./Drawerdata";
+import Signindialog from './Signindialog';
+import Image from 'next/image';
+import { useLanguage } from '../../context/LanguageContext';
+import { translations } from '../../translations';
 
-const Navbarin: React.FC = () => {
-    useEffect(() => {
-        // The debounce function receives our function as a parameter
-        const debounce = (fn: Function) => {
-            // This holds the requestAnimationFrame reference, so we can cancel it if we wish
-            let frame: number;
-            // The debounce function returns a new function that can receive a variable number of arguments
-            return (...params: any[]) => {
-                // If the frame variable has been defined, clear it now, and queue for next frame
-                if (frame) {
-                    cancelAnimationFrame(frame);
-                }
-                // Queue our function call for the next frame
-                frame = requestAnimationFrame(() => {
-                    // Call our function and pass any params we received
-                    fn(...params);
-                });
-            }
-        };
-
-        // Reads out the scroll position and stores it in the data attribute
-        // so we can use it in our stylesheets
-        const storeScroll = () => {
-            document.documentElement.dataset.scroll = window.scrollY.toString();
-        }
-
-        // Listen for new scroll events, here we debounce our `storeScroll` function
-        document.addEventListener('scroll', debounce(storeScroll), { passive: true });
-
-        // Update scroll position for first time
-        storeScroll();
-    }, [])
-    return (
-        <>
-            <Navbar />
-        </>
-    );
+function classNames(...classes: string[]) {
+    return classes.filter(Boolean).join(' ')
 }
 
-export default Navbarin;
+const Navbar = () => {
+    const [isOpen, setIsOpen] = React.useState(false);
+    const { language, toggleLanguage } = useLanguage();
+    const t = translations[language];
+
+    const navigation = [
+        { name: t.nav.home, href: '/', current: false },
+        { name: t.nav.about, href: '/about-us', current: false },
+        { name: t.nav.courses, href: '/courses', current: false },
+        { name: t.nav.testimonials, href: '/testimonials', current: false },
+        { name: t.nav.contact, href: '/contact-us', current: false },
+    ];
+
+    return (
+        <Disclosure as="nav" className="navbar bg-lightpink">
+            <>
+                <div className="mx-auto max-w-7xl px-3 md:px-6 lg:px-8">
+                    <div className="relative flex h-12 sm:h-20 items-center">
+                        <div className="flex flex-1 items-center sm:justify-between">
+
+                            {/* LOGO */}
+
+                            <div className="flex sm:hidden flex-shrink-0 items-center border-right">
+                                <Image src="/images/Logo/Logo.png" alt="logo" width={85} height={36} />
+                            </div>
+                            <div className="hidden sm:flex flex-shrink-0 items-center border-right">
+                                <Image src="/images/Logo/Logo.png" alt="logo" width={132} height={56} />
+                            </div>
+
+                            {/* LINKS */}
+
+                            <div className="hidden lg:flex items-center border-right">
+                                <div className="flex justify-end space-x-4">
+                                    {navigation.map((item) => (
+                                        <Link
+                                            key={item.name}
+                                            href={item.href}
+                                            className={classNames(
+                                                item.current ? 'bg-black' : 'navlinks hover:opacity-100',
+                                                'px-3 py-2 rounded-md text-lg font-normal opacity-50 hover:text-black space-links'
+                                            )}
+                                            aria-current={item.href ? 'page' : undefined}
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    ))}
+                                    <button
+                                        onClick={toggleLanguage}
+                                        className={classNames(
+                                            'navlinks hover:opacity-100',
+                                            'px-3 py-2 rounded-md text-lg font-normal opacity-50 hover:text-black space-links'
+                                        )}
+                                    >
+                                        {language === 'en' ? '中文' : 'English'}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* DRAWER FOR MOBILE VIEW */}
+
+                        {/* DRAWER ICON */}
+                        <div className='block lg:hidden'>
+                            <Bars3Icon className="block h-6 w-6 cursor-pointer" aria-hidden="true" onClick={() => setIsOpen(true)} />
+                        </div>
+
+                        {/* DRAWER LINKS DATA */}
+                        <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
+                            <Drawerdata />
+                        </Drawer>
+
+                    </div>
+                </div>
+            </>
+        </Disclosure>
+    )
+}
+
+export default Navbar;

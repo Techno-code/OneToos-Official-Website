@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../translations';
 
 const testimonials = [
   '/images/Testimonials/Testimonial 1.jpg',
@@ -20,18 +22,21 @@ const testimonials = [
 
 export default function Testimonials() {
   const [index, setIndex] = useState(0);
+  const { language } = useLanguage();
+  const t = translations[language];
 
   const prev = () => setIndex((i) => (i === 0 ? testimonials.length - 1 : i - 1));
   const next = () => setIndex((i) => (i === testimonials.length - 1 ? 0 : i + 1));
 
   return (
     <main className="max-w-4xl mx-auto py-16 px-4 flex flex-col items-center">
-      <h1 className="text-4xl font-bold mb-8">Testimonials</h1>
-      <p className="text-center text-lg text-gray-600 mb-6">Swipe through our great reviews from satisfied parents!</p>
+      <h1 className="text-4xl font-bold mb-8">{t.testimonials.title}</h1>
+      <p className="text-center text-lg text-gray-600 mb-6">{t.testimonials.subtitle}</p>
       <div className="relative w-full max-w-2xl">
         <button 
           onClick={prev} 
           className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 bg-pink hover:bg-pink/90 text-white font-bold py-3 px-4 border-b-4 border-pink/60 hover:border-pink/50 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+          aria-label={t.testimonials.navigation.prev}
         >
           &#8592;
         </button>
@@ -51,6 +56,7 @@ export default function Testimonials() {
         <button 
           onClick={next} 
           className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 bg-pink hover:bg-pink/90 text-white font-bold py-3 px-4 border-b-4 border-pink/60 hover:border-pink/50 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+          aria-label={t.testimonials.navigation.next}
         >
           &#8594;
         </button>

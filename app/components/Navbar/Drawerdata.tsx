@@ -1,41 +1,39 @@
-import React from "react";
-import Link from "next/link";
+"use client";
+import Link from 'next/link';
+import { useLanguage } from '../../context/LanguageContext';
+import { translations } from '../../translations';
 
-const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'Our Teacher', href: '/about-us' },
-    { name: 'Courses', href: '/courses' },
-    { name: 'Testimonials', href: '/testimonials' },
-    { name: 'Contact Us', href: '/contact-us' },
-];
+const Drawerdata = () => {
+    const { language, toggleLanguage } = useLanguage();
+    const t = translations[language];
 
-function classNames(...classes: string[]) {
-    return classes.filter(Boolean).join(' ')
-}
+    const navigation = [
+        { name: t.nav.home, href: '/' },
+        { name: t.nav.about, href: '/about-us' },
+        { name: t.nav.courses, href: '/courses' },
+        { name: t.nav.testimonials, href: '/testimonials' },
+        { name: t.nav.contact, href: '/contact-us' },
+    ];
 
-const Data = () => {
     return (
-        <div className="rounded-md max-w-sm w-full mx-auto">
-            <div className="flex-1 space-y-4 py-1">
-                <div className="sm:block">
-                    <div className="space-y-1 px-5 pt-2 pb-3">
-                        {navigation.map((item) => (
-                            <Link
-                                key={item.name}
-                                href={item.href}
-                                className={classNames(
-                                    'text-black hover:bg-gray-700 hover:text-pink',
-                                    'block py-2 rounded-md text-base font-medium'
-                                )}
-                            >
-                                {item.name}
-                            </Link>
-                        ))}
-                    </div>
+        <div className="container">
+            <div className="w-full h-full flex flex-col py-4 md:py-4 px-5">
+                <div className="flex flex-col space-y-6">
+                    {navigation.map((item) => (
+                        <Link key={item.name} href={item.href} className="text-base text-black hover:text-pink">
+                            {item.name}
+                        </Link>
+                    ))}
+                    <button
+                        onClick={toggleLanguage}
+                        className="text-base text-black hover:text-pink"
+                    >
+                        {language === 'en' ? '中文' : 'English'}
+                    </button>
                 </div>
             </div>
         </div>
     );
-}
+};
 
-export default Data;
+export default Drawerdata;

@@ -1,13 +1,16 @@
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
 import './globals.css';
 import Navbar from './components/Navbar/index';
 import Footer from './components/Footer/Footer';
+import { LanguageProvider } from './context/LanguageContext';
 
+const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'OneToos',
   description: 'OneToos - Professional Math and Science Tutoring Services',
 }
-
 
 export default function RootLayout({
   children,
@@ -16,10 +19,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-        {children}
-        <Footer />
+      <body className={inter.className}>
+        <LanguageProvider>
+          <Navbar />
+          <div className="pt-20">
+            {children}
+          </div>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   )

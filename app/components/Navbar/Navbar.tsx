@@ -7,6 +7,7 @@ import Drawer from "./Drawer";
 import Drawerdata from "./Drawerdata";
 import Signindialog from './Signindialog';
 import Image from 'next/image';
+import { useLanguage } from '../../context/LanguageContext';
 
 interface NavigationItem {
     name: string;
@@ -27,8 +28,8 @@ function classNames(...classes: string[]) {
 }
 
 const Navbar = () => {
-
     const [isOpen, setIsOpen] = React.useState(false);
+    const { language, toggleLanguage } = useLanguage();
 
     return (
         <Disclosure as="nav" className="navbar bg-lightpink">
@@ -63,6 +64,12 @@ const Navbar = () => {
                                             {item.name}
                                         </Link>
                                     ))}
+                                    <button
+                                        onClick={toggleLanguage}
+                                        className="px-3 py-2 rounded-md text-lg font-normal opacity-50 hover:opacity-100 hover:text-black space-links"
+                                    >
+                                        {language === 'en' ? '中文' : 'English'}
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -73,6 +80,7 @@ const Navbar = () => {
                         <div className='block lg:hidden'>
                             <Bars3Icon className="block h-6 w-6 cursor-pointer" aria-hidden="true" onClick={() => setIsOpen(true)} />
                         </div>
+
 
                         {/* DRAWER LINKS DATA */}
                         <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
